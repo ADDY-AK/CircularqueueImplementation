@@ -17,45 +17,45 @@ public class Circularqueuewitharray {
       return true;
     else
       return false;
-  }//end of method
+  }
 
   public boolean isQueueFull() {
-//    if (top+1 == beginning) { //If we have completed a circle, then we can say that Queue is full
+//    if (top+1 == beginning) {
 //      return true;
 //    }else
-   if ((beginning==0) && (top+1 == arr.length)) { //Trivial case of Queue being full
+   if ((beginning==0) && (top+1 == arr.length)) {
       return true;
     }else {
       return false;
     }
-  }//end of method
+  }
 
   public void enQueue(int value) {
     if (isQueueFull()) {
-      System.out.println("\nQueue overflow error!!");
+      System.out.println("\nQueue overflow ");
     }else {
       if(beginning ==-1)
       {
         beginning = 0;
       }
-      if (top+1 == arr.length) { //if top is already at last cell of array, then reset it to first cell
+      if (top+1 == arr.length) {
         top=0;
       }else {
         top++;
       }
       arr[top] = value;
-      System.out.println("\nSuccessfully inserted "+value+" in the queue");
+      System.out.println("\ninserted "+value+" in the queue");
     }
-  }//end of method
+  }
   public void deQueue() {
     if (isQueueEmpty()) {
       System.out.println("Queue underflow error!!");
     } else {
-      System.out.println("Dequeued: " + arr[beginning] + " from queue");
+      System.out.println("Dequeue from queue " + arr[beginning]);
       arr[beginning]= 0;
-      if (beginning == top) { //if there is only 1 element in Queue
+      if (beginning == top) {
         beginning = top = -1;
-      } else if (beginning + 1 == arr.length) { //if start has reached end of array, then start again from 0
+      } else if (beginning + 1 == arr.length) {
         beginning = 0;
       } else {
         beginning++;
